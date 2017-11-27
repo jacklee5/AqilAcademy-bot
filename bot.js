@@ -57,6 +57,11 @@ client.on('message', msg => {
     
 var said = msg.content.toLowerCase(); //declare said
     if (msg.content.startsWith(prefix + "cookpie")) {
+        if(msg.channel.id !== "382504483483025410") {
+           msg.delete(3000)
+           msg.reply("Pies can only be cooked in <#382504483483025410>!").then(msg => msg.delete(3000))
+           return; //RETURN IS VERY IMPORTANT
+        }
           const responses = ["burnt", "perfect", "undercooked"]
                   let toSay = Math.floor(Math.random() * responses.length)
                   console.log(toSay)
@@ -479,7 +484,7 @@ var said = msg.content.toLowerCase(); //declare said
         }
     }
 
-   */ if (said.startsWith(prefix + "mute")) {
+   if (said.startsWith(prefix + "mute")) {
         let member = msg.mentions.members.first();
         let modRole = msg.guild.roles.find("name", "Moderator")
         let cp = msg.guild.roles.find("name", "Admin Perm")
@@ -840,7 +845,7 @@ var said = msg.content.toLowerCase(); //declare said
             msg.delete(7000);
             msg.reply("`ERROR` You do not have the `Moderator` role.").then(msg => msg.delete(7000));
         }
-    }
+    }*/
 
 
 
