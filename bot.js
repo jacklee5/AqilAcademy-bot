@@ -1292,7 +1292,7 @@ var said = msg.content.toLowerCase(); //declare said
         }
       
     }*/
-    if (msg.channel.id === "372339686443843584") {
+    /*if (msg.channel.id === "372339686443843584") {
         if (msg.author.id === "299150484218970113" || msg.author.id === "294115380916649986") {
 
         } else if (msg.author.id === client.user.id) {
@@ -1301,7 +1301,7 @@ var said = msg.content.toLowerCase(); //declare said
             msg.delete()
             return;
         }
-    }
+    }*/
     /*if (msg.content.startsWith(prefix + "electionreset")) {
         if (msg.author.id === "299150484218970113" || msg.author.id === "294115380916649986") {
         let setting = said.slice(prefix.length + 14, msg.length);
