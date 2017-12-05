@@ -56,6 +56,20 @@ client.on('message', msg => {
     
     
 var said = msg.content.toLowerCase(); //declare said
+    if (msg.content.startsWith(prefix + "quote")) {
+        var toFind = msg.content.slice(prefix.length + 6, msg.length);
+        msg.channel.fetchMessages({around: toFind, limit: 1})
+          .then(messages => {
+            if(!messages) return msg.reply(`\`ERROR\`\nCould not find message with ID ${toFind}`);
+            const fetchedMsg = messages.first(); // messages is a collection!)
+            // do something with it
+            let embed = new Discord.RichEmbed()
+            embed.setAuthor(fetchedMsg.author.tag + " in #" + fetchedMsg.channel.name, fetchedMsg.author.avatarURL)
+            embed.setDescription(fetchedMsg.content)
+            msg.channel.send({ embed })
+          });
+
+        }
     if (msg.content.startsWith(prefix + "cookpie")) {
         if(msg.channel.id !== "382504483483025410") {
            msg.delete(3000)
