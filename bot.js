@@ -181,6 +181,9 @@ var said = msg.content.toLowerCase(); //declare said
                 msg.channel.send("**___PLEASE STOP POSTING MESSAGES SO MY DEVICE STOPS BEEPING!!!___**\n\nThere's an easy way to fix this! ```cs\n1. Click the server name\n2. Click the Notification Settings button\nAdjust the notification settings as you please.\n```\n")
                 msg.channel.sendFile("./nonotifs.mp4")
             break;
+            case "canary":
+                msg.channel.send("<:canary:388475361635074059> **Discord Canary** <:canary:388475361635074059>\nThe test build of Discord's features. Gets all the cool stuff before everyone else. :wink:\n\nYou can get Canary at any one of these links (based on your platform):\nhttps://discordapp.com/api/download/canary?platform=win     <<Windows\nhttps://discordapp.com/api/download/canary?platform=osx     <<Mac\nhttps://discordapp.com/api/download/canary?platform=linux   <<Linux\n\nThis is the server for Canary users where you can report bugs and find further information: https://discord.gg/discord-testers <:DTesters:388478805057994773>")
+            break;
             default:
                 msg.channel.send("<:clydeDeny:361217772220448769> That tag was not found. Please check your spelling or suggest it be added by posting a comment at https://github.com/ShadowKA/AqilAcademy-bot/issues/6 or contacting Shadow.")
 
