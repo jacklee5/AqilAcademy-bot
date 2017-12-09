@@ -18,6 +18,16 @@ function clean(text) {
         return text;
 }
 
+  function removePunctuation(str) {
+      var m = '!@#$%^&*()_+-=~`.,></?"\':;}{[]\\☺☻';
+      var r = '';
+      for(var i = 0; i < str.length; i++){
+          if (m.indexOf(str[i]) === -1) {
+              r += str[i];
+          }
+      }
+       return r;
+   }
 function contains(a, b) {
     if(a === b) return true;
 };
@@ -31,7 +41,7 @@ client.on('message', msg => {
 
     for (var a = 0; a < msg.content.length; a++) {
   for (var i = 0; i < badWords.length; i++) {
-      let splitted = msg.content.toLowerCase().split(" ")
+      let splitted = removePunctuationmsg.content.toLowerCase()).split(" ")
       if (contains(splitted[a], badWords[i].toLowerCase())) {
           if(msg.author.id === client.user.id) return;
           msg.delete();
