@@ -41,7 +41,7 @@ client.on('message', msg => {
 
     for (var a = 0; a < msg.content.length; a++) {
   for (var i = 0; i < badWords.length; i++) {
-      let splitted = removePunctuationmsg.content.toLowerCase()).split(" ")
+      let splitted = removePunctuation(msg.content.toLowerCase()).split(" ")
       if (contains(splitted[a], badWords[i].toLowerCase())) {
           if(msg.author.id === client.user.id) return;
           msg.delete();
