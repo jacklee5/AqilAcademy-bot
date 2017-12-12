@@ -127,7 +127,7 @@ var said = msg.content.toLowerCase(); //declare said
                             }
                         })
         }
-    }
+    });
     
 client.on('guildMemberAdd', member => {
     if(member.guild.id !== "294115797326888961") return;
