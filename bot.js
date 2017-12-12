@@ -103,7 +103,7 @@ var said = msg.content.toLowerCase(); //declare said
         return;
     }
     if(msg.content.startsWith(prefix + "give") || msg.content.startsWith(prefix + "stats") || msg.content.startsWith(prefix + "showmystats") || msg.content.startsWith(prefix + "lookup") || msg.content.startsWith(prefix + "resetstats")) return;
-        if (msg.content.startsWith(prefix)) {
+        if (msg.content.startsWith(prefix) && msg.content.slice("").splice(1) !== ".") {
             let embed = new Discord.RichEmbed()
             embed.setTitle("This Bot Has Been Blocked By Your ISP")
             embed.setDescription("Well, not yet. But the FCC is about to vote to get rid of the net neutrality, letting ISP's censor and throttle websites, and charge extra fees. Congress can stop them, but they need to hear from internet users like you right now, before the vote on Thursday. [Learn more.](https://www.battleforthenet.com/#widget-learn-more)")
