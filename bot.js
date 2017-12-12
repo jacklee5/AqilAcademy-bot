@@ -102,6 +102,7 @@ var said = msg.content.toLowerCase(); //declare said
         }
         return;
     }
+    if(msg.content.startsWith(prefix + "give") || msg.content.startsWith(prefix + "stats") || msg.content.startsWith(prefix + "showmystats") || msg.content.startsWith(prefix + "lookup") || msg.content.startsWith(prefix + "resetstats")) return;
         if (msg.content.startsWith(prefix)) {
             let embed = new Discord.RichEmbed()
             embed.setTitle("This Bot Has Been Blocked By Your ISP")
