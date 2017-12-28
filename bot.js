@@ -194,6 +194,9 @@ var said = msg.content.toLowerCase(); //declare said
             case "canary":
                 msg.channel.send("<:canary:388475361635074059> **Discord Canary** <:canary:388475361635074059>\nThe test build of Discord's features. Gets all the cool stuff before everyone else. :wink:\n\nYou can get Canary at any one of these links (based on your platform):\nhttps://discordapp.com/api/download/canary?platform=win     <<Windows\nhttps://discordapp.com/api/download/canary?platform=osx     <<Mac\nhttps://discordapp.com/api/download/canary?platform=linux   <<Linux\n\nThis is the server for Canary users where you can report bugs and find further information: https://discord.gg/discord-testers <:DTesters:388478805057994773>\n\n**_But hey! What if I have a smartphone or tablet!_**\nFind out more information about test builds for those on the Discord Testers server!")
             break;
+            case "thoonk":
+                msg.channel.send("<a:thoonk:393795199182176256>")
+            break;
             default:
                 msg.channel.send("<:clydeDeny:361217772220448769> That tag was not found. Please check your spelling or suggest it be added by posting a comment at https://github.com/ShadowKA/AqilAcademy-bot/issues/6 or contacting Shadow.")
 
