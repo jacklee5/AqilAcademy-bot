@@ -1062,7 +1062,7 @@ var said = msg.content.toLowerCase(); //declare said
             msg.delete();
             member.send("**You've been warned in AqilAcademy:**\n" + warning);
             msg.channel.send("<:blobpolice:364194401783775252> " + member.user.username + "#" + member.user.discriminator + " has been warned for `" + warning + "`.")
-            client.channels.get("358352044094128128").send({
+            client.channels.get("382499510401630209").send({
                 embed: {
                     color: 16753920,
                     fields: [{
