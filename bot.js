@@ -59,7 +59,7 @@ client.on('message', msg => {
                 }
             })
             client.channels.get("373559262095343616").send("!!infract " + msg.author.id)
-            client.channels.get("382937336876367872").send("**Filtered Message:** " + msg.content + "\n**Word:** " + splitted[a] + " for badWords `" + badWords[i] + "`")
+            client.channels.get("382937336876367872").send("**Filtered Message:** " + msg.content + "\n**Word:** " + splitted[a] + " for badWords `" + badWords[i] + "`\n**Sent By:** " + msg.author.tag)
       }
   }
 }
