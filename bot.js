@@ -54,6 +54,7 @@ client.on('message', msg => {
         } catch (err) {
             msg.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
         }
+        return;
     }
     
     if (msg.guild.id !== "294115797326888961" && msg.guild.id !== "323074775360602114" && msg.content.startsWith(prefix)) return msg.reply("https://discord.gg/UtY4uVz")
