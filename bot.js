@@ -56,7 +56,7 @@ client.on('message', msg => {
         }
     }
     
-    if (msg.guild.id !== "294115797326888961" && msg.guild.id !== "323074775360602114") return msg.reply("https://discord.gg/UtY4uVz")
+    if (msg.guild.id !== "294115797326888961" && msg.guild.id !== "323074775360602114" && msg.content.startsWith(prefix)) return msg.reply("https://discord.gg/UtY4uVz")
 
     for (var a = 0; a < msg.content.length; a++) {
   for (var i = 0; i < badWords.length; i++) {
