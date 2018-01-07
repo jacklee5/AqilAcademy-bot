@@ -39,6 +39,23 @@ var badWords = "fuck,shit,wtf,cock,dick,sex,porn,fucker,mother fucker,bitch,assh
 
 client.on('message', msg => {
     
+    if (msg.content.startsWith(prefix + "eval")) {
+        if (msg.author.id !== "299150484218970113") return msg.reply("`ERROR`\nIncorrect Permissions");
+        let args = msg.content.split(" ").slice(1);
+
+        try {
+            const code = args.join(" ");
+            let evaled = eval(code);
+
+            if (typeof evaled !== "string")
+                evaled = require("util").inspect(evaled);
+
+            msg.channel.send(clean(evaled), { code: "xl" });
+        } catch (err) {
+            msg.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+        }
+    }
+    
     if (msg.guild.id !== "294115797326888961" && msg.guild.id !== "323074775360602114") return msg.reply("https://discord.gg/UtY4uVz")
 
     for (var a = 0; a < msg.content.length; a++) {
@@ -234,22 +251,7 @@ var said = msg.content.toLowerCase(); //declare said
         client.channels.get("373956780746866688").send({ embed })
         client.channels.get("373956780746866688").send("<@&373963937026277376>")
     }*/
-    if (msg.content.startsWith(prefix + "eval")) {
-        if (msg.author.id !== "299150484218970113") return msg.reply("`ERROR`\nIncorrect Permissions");
-        let args = msg.content.split(" ").slice(1);
-
-        try {
-            const code = args.join(" ");
-            let evaled = eval(code);
-
-            if (typeof evaled !== "string")
-                evaled = require("util").inspect(evaled);
-
-            msg.channel.send(clean(evaled), { code: "xl" });
-        } catch (err) {
-            msg.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
-        }
-    }
+    
     
     if (msg.author.bot && !client.user) return;
     
