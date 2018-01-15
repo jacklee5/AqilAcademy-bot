@@ -40,7 +40,10 @@ var badWords = "fuck,shit,wtf,cock,dick,sex,porn,fucker,mother fucker,bitch,assh
 client.on('message', msg => {
     
     if (msg.content.replace(/[^A-Z]/g, "").length/msg.content.length >= 0.75 && msg.guild.id === "294115797326888961") {
+        if (msg.author.id !== "299150484218970113" && msg.author.id !== "294115380916649986" && msg.author.id !== client.user.id) {
+            msg.member.setNickname("use mor lowercase")
         msg.delete();
+        
             msg.reply("Too many caps, try talking lowercase! <:stop:364887308782272512>");
             let member = msg.author;
             member.send("**You've been warned in AqilAcademy:**\nPlease do not use large numbers of capital letters in your messages.");
@@ -56,7 +59,7 @@ client.on('message', msg => {
             })
             client.channels.get("373559262095343616").send("!!infract " + msg.author.id)
             client.channels.get("382937336876367872").send("**Filtered Message (caps):** " + msg.content + "\n**Sent By:** " + msg.author.tag + "\n**Channel:** <#" + msg.channel.id + ">")
-            
+        }
     }
     
     if (msg.content.startsWith(prefix + "eval")) {
