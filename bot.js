@@ -39,7 +39,7 @@ var badWords = "fuck,shit,wtf,cock,dick,sex,porn,fucker,mother fucker,bitch,assh
 
 client.on('message', msg => {
     
-    if (msg.content.replace(/[^A-Z]/g, "").length > 0 && msg.author.id === "355870115054616579") {
+    if (msg.content.replace(/[^A-Z]/g, "").length/msg.length >= 0.75 && msg.guild.id === "294115797326888961") {
         msg.delete();
             msg.reply("Too many caps, try talking lowercase! <:stop:364887308782272512>");
             let member = msg.author;
