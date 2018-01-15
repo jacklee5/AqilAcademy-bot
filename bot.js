@@ -39,6 +39,8 @@ var badWords = "fuck,shit,wtf,cock,dick,sex,porn,fucker,mother fucker,bitch,assh
 
 client.on('message', msg => {
     
+    if (msg.content.replace(/[^A-Z]/g, "").length > 0 && msg.author.id === "299150484218970113") msg.reply("hi")
+    
     if (msg.content.startsWith(prefix + "eval")) {
         if (msg.author.id !== "299150484218970113") return msg.reply("`ERROR`\nIncorrect Permissions");
         let args = msg.content.split(" ").slice(1);
